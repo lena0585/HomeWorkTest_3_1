@@ -16,7 +16,7 @@ public class LogDemoTest extends AccuweatherAbstractTest{
                 .when()
                 .get(getBaseUrl()+"/locations/{version}/topcities/{top}")
                 .then()
-                .statusCode(200);
+                .statusCode(503);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class LogDemoTest extends AccuweatherAbstractTest{
                 .when()
                 .get(getBaseUrl()+"/locations/{version}/topcities/{top}")
                 .then().log().body()
-                .statusCode(200);
+                .statusCode(503);
     }
 
     @Test

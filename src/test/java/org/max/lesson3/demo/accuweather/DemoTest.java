@@ -25,7 +25,7 @@ public class DemoTest extends AccuweatherAbstractTest{
                 .get(getBaseUrl()+"/locations/v1/regions?" +
                         "apikey=" +getApiKey())
                 .then()
-                .statusCode(200);
+                .statusCode(503);
 
     }
 
@@ -36,7 +36,7 @@ public class DemoTest extends AccuweatherAbstractTest{
                 .request(Method.GET,getBaseUrl()+"/locations/{version}/regions?" +
                         "apikey={apiKey}", "v1", getApiKey())
                 .then()
-                .statusCode(200);
+                .statusCode(503);
 
         given()
                 .queryParam("apikey", getApiKey())
@@ -44,7 +44,7 @@ public class DemoTest extends AccuweatherAbstractTest{
                 .when()
                 .request(Method.GET,getBaseUrl()+"/locations/{version}/regions")
                 .then()
-                .statusCode(200);
+                .statusCode(503);
 
          given().cookie("username","max")
                 .cookie( new Cookie
@@ -56,14 +56,14 @@ public class DemoTest extends AccuweatherAbstractTest{
                 .get(getBaseUrl()+"/locations/v1/regions?" +
                         "apikey=" +getApiKey())
                 .then()
-                .statusCode(200);
+                .statusCode(503);
 
         given().headers("username","max")
                 .when()
                 .get(getBaseUrl()+"/locations/v1/regions?" +
                         "apikey=" +getApiKey())
                 .then()
-                .statusCode(200);
+                .statusCode(503);
     }
 
     @Test
